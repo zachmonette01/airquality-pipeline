@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  spark:
+    image: bitnami/spark:3
+    container_name: spark
+    environment:
+      - SPARK_MODE=master        # standalone master
+    ports:
+      - "4040:4040"              # Spark Web‑UI
+    volumes:
+      - .:/workspace             # mount your repo inside the container
